@@ -31,7 +31,7 @@ function isOperator(ch) {
 
 function isKeyword(str) {
     const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double',
-        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std'
+        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std',
         'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
          , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
 
