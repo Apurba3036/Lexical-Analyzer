@@ -30,7 +30,7 @@ function isOperator(ch) {
 }
 
 function isKeyword(str) {
-    const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double',
+    const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double', 'for',
         'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std',
         'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
          , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
@@ -71,7 +71,7 @@ function checkCode(str) {
 
         if (isPunctuator(str[right]) && left === right) {
             if (isOperator(str[right])) {
-                results.push(`${str[right]}s--> <Token, Op>`);
+                results.push(`${str[right]}s--> <Token , Op>`);
             }
             right++;
             left = right;
@@ -79,11 +79,11 @@ function checkCode(str) {
             const sub = subString(str, left, right - 1);
 
             if (isKeyword(sub)) {
-                results.push(`${sub}--> <Token,kw>`);
+                results.push(`${sub}--> <Token , KW>`);
             } else if (isNumber(sub)) {
-                results.push(`${sub}--> <Token,num>`);
+                results.push(`${sub}--> <Token , num>`);
             } else if (validIdentifier(sub) && !isPunctuator(str[right - 1])) {
-                results.push(`${sub}--> <Token,id>`);
+                results.push(`${sub}--> <Token , id>`);
             } else if (!validIdentifier(sub) && !isPunctuator(str[right - 1])) {
                 results.push(`${sub}--> Error`);
             }
