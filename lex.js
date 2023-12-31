@@ -31,7 +31,7 @@ function isOperator(ch) {
 
 function isKeyword(str) {
     const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double',
-        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch',
+        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std'
         'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
          , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
 
@@ -71,7 +71,7 @@ function checkCode(str) {
 
         if (isPunctuator(str[right]) && left === right) {
             if (isOperator(str[right])) {
-                results.push(`${str[right]}--> <Token, Op>`);
+                results.push(`${str[right]}s--> <Token, Op>`);
             }
             right++;
             left = right;
