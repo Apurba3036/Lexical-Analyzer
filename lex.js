@@ -4,7 +4,7 @@ function isPunctuator(ch) {
         ch === '/' || ch === ',' || ch === ';' || ch === '>' ||
         ch === '<' || ch === '=' || ch === '(' || ch === ')' ||
         ch === '[' || ch === ']' || ch === '{' || ch === '}' ||
-        ch === '&' || ch === '|' || ch==='#');
+        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':');
 }
 
 function validIdentifier(str) {
@@ -26,7 +26,7 @@ function validIdentifier(str) {
 }
 
 function isOperator(ch) {
-    return ['+', '-', '*', '/', '>', '<', '=', '|', '&'].includes(ch);
+    return ['+','++', '-','--', '*','**', '/', '>', '<', '=','==', '|','||','&', '&&'].includes(ch);
 }
 
 function isKeyword(str) {
@@ -77,7 +77,7 @@ function checkCode(str) {
             left = right;
         } else if ((isPunctuator(str[right]) && left !== right) || (right === len && left !== right)) {
             const sub = subString(str, left, right - 1);
-
+            
             if (isKeyword(sub)) {
                 results.push(`${sub}--> <Token , KW>`);
             } else if (isNumber(sub)) {
@@ -85,7 +85,7 @@ function checkCode(str) {
             } else if (validIdentifier(sub) && !isPunctuator(str[right - 1])) {
                 results.push(`${sub}--> <Token , id>`);
             } else if (!validIdentifier(sub) && !isPunctuator(str[right - 1])) {
-                results.push(`${sub}--> Error`);
+                results.push(`${sub}--> Error: Variable can not start with a number or digit`);
             }
 
             left = right;
