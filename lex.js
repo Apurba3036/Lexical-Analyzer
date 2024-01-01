@@ -4,7 +4,7 @@ function isPunctuator(ch) {
         ch === '/' || ch === ',' || ch === ';' || ch === '>' ||
         ch === '<' || ch === '=' || ch === '(' || ch === ')' ||
         ch === '[' || ch === ']' || ch === '{' || ch === '}' ||
-        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':');
+        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':'||ch==='E'||ch==='.');
 }
 
 function validIdentifier(str) {
