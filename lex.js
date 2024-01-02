@@ -90,7 +90,7 @@ function checkCode(str) {
 
 
 document.getElementById('btn').addEventListener('click',function(){
-    const code= document.getElementById('floatingTextarea1').value;
+    const code= document.getElementById('floatingTextarea1').value.replace(/[\r\n]+/g, '');
     //  const code = prompt('Enter your code: ');
      const result=checkCode(code);
      document.getElementById('floatingTextarea').value=result.join('\n');
@@ -100,6 +100,7 @@ document.getElementById('btn2').addEventListener('click',function(){
     
      document.getElementById('floatingTextarea').value='';
 })
+
 
 
 const fileSelector = document.getElementById('file-selector');
