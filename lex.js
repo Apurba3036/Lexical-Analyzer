@@ -63,7 +63,7 @@ function checkCode(str) {
 
         if (isPunctuator(str[right]) && left === right) {
             if (isOperator(str[right])) {
-                results.push(`${str[right]}--> <Token , Op>`);
+                results.push(`${str[right]} --> <Token , Op>`);
             }
             right++;
             left = right;
