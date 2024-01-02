@@ -1,0 +1,1 @@
+int void main(){int a=4; int b=7; int c=a+b; if(a>b){int s=a-b}else int mul=a*b; int 8Apurba=1; float f=9.99999;float m;float n; float e=m*c^2; }

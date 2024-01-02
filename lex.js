@@ -4,7 +4,31 @@ function isPunctuator(ch) {
         ch === '/' || ch === ',' || ch === ';' || ch === '>' ||
         ch === '<' || ch === '=' || ch === '(' || ch === ')' ||
         ch === '[' || ch === ']' || ch === '{' || ch === '}' ||
-        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':'||ch==='E');
+        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':'||ch==='E'||ch==='^');
+}
+
+
+function isOperator(ch) {
+    return ['+','++', '-','--','^','*','**', '/', '>', '<', '=','==', '|','||','&', '&&'].includes(ch);
+}
+
+function isKeyword(str) {
+    const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double', 'for','cin',
+        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std',
+        'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
+         , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
+
+    return keywords.includes(str);
+}
+
+function isNumber(str) {
+    const validNumberRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?$/;
+    return validNumberRegex.test(str) && !isNaN(Number(str));
+}
+
+
+function subString(realStr, l, r) {
+    return realStr.substring(l, r + 1);
 }
 
 function validIdentifier(str) {
@@ -25,28 +49,6 @@ function validIdentifier(str) {
     return true;
 }
 
-function isOperator(ch) {
-    return ['+','++', '-','--', '*','**', '/', '>', '<', '=','==', '|','||','&', '&&'].includes(ch);
-}
-
-function isKeyword(str) {
-    const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double', 'for',
-        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std',
-        'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
-         , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
-
-    return keywords.includes(str);
-}
-
-function isNumber(str) {
-    const validNumberRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?$/;
-    return validNumberRegex.test(str) && !isNaN(Number(str));
-}
-
-
-function subString(realStr, l, r) {
-    return realStr.substring(l, r + 1);
-}
 
 function checkCode(str) {
     let left = 0;
@@ -100,6 +102,16 @@ document.getElementById('btn2').addEventListener('click',function(){
 })
 
 
+const fileSelector = document.getElementById('file-selector');
+fileSelector.addEventListener('change', (event) => {
+    let fr = new FileReader();
+    fr.onload = function () {
+        document.getElementById('floatingTextarea1').value= fr.result;
+    };
+
+  
+    fr.readAsText(event.target.files[0]);
+});
 
 
 
