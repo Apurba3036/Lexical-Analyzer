@@ -4,7 +4,7 @@ function isPunctuator(ch) {
         ch === '/' || ch === ',' || ch === ';' || ch === '>' ||
         ch === '<' || ch === '=' || ch === '(' || ch === ')' ||
         ch === '[' || ch === ']' || ch === '{' || ch === '}' ||
-        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':'||ch==='E'||ch==='.');
+        ch === '&' || ch === '|' || ch==='#' ||ch==='?'||ch==='!'||ch===':'||ch==='E');
 }
 
 function validIdentifier(str) {
@@ -39,20 +39,10 @@ function isKeyword(str) {
 }
 
 function isNumber(str) {
-    const numOfDecimal = str.split('.').length - 1;
-
-    if (numOfDecimal > 1) {
-        return false;
-    }
-
-    for (let i = 0; i < str.length; i++) {
-        if ((isNaN(str[i]) && str[i] !== '-') || (str[i] === '-' && i > 0)) {
-            return false;
-        }
-    }
-
-    return true;
+    const validNumberRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?$/;
+    return validNumberRegex.test(str) && !isNaN(Number(str));
 }
+
 
 function subString(realStr, l, r) {
     return realStr.substring(l, r + 1);
