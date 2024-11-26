@@ -3,7 +3,7 @@ int a=4;
 int b=7; 
 int c=a+b; 
 if(a>b){
-    int s=a-b
+    int u=a-b
     }
     else 
     int mul=a*b; 
