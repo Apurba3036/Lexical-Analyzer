@@ -13,10 +13,32 @@ function isOperator(ch) {
 }
 
 function isKeyword(str) {
-    const keywords = ['if', 'else', 'while', 'do', 'break', 'continue', 'int', 'double', 'for','cin',
-        'float', 'return', 'char', 'case', 'long', 'short', 'typedef', 'switch','using','namespace','std',
-        'unsigned', 'void', 'static', 'struct', 'sizeof', 'long', 'volatile','main','float', 'include', 'iostream'
-         , 'long', 'typedef', 'enum', 'const', 'union', 'extern', 'bool', 'cout','cin','printf','scanf','function'];
+    
+    const keywords = [
+        // Common keywords in both C and C++
+        'if', 'else', 'while', 'do', 'for', 'break', 'continue', 'return', 'switch', 'case', 'default',
+        'int', 'double', 'float', 'char', 'void', 'static', 'struct', 'sizeof', 'typedef', 'enum', 
+        'union', 'const', 'volatile', 'extern', 'signed', 'unsigned', 'long', 'short', 
+        
+        // C++ keywords
+        'class', 'public', 'private', 'protected', 'friend', 'virtual', 'this', 'delete', 
+        'new', 'namespace', 'using', 'try', 'catch', 'throw', 'bool', 'template', 
+        'typename', 'operator', 'inline', 'explicit', 'export', 'mutable', 'wchar_t', 
+        'static_cast', 'dynamic_cast', 'reinterpret_cast', 'const_cast', 'typeid', 'constexpr',
+    
+        // Preprocessor(both)
+        'define', 'include', 'ifdef', 'ifndef', 'endif', 'pragma', 
+    
+        // Input/Output functions (C++)
+        'cout', 'cin', 'endl', 'iostream', 'std',
+    
+        // Input/Output functions (C)
+        'printf', 'scanf',
+    
+      
+        'main', 'auto', 'register', 'goto', 'asm', 'function'
+    ];
+    
 
     return keywords.includes(str);
 }
