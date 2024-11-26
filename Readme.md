@@ -43,17 +43,18 @@ A **Lexical Analyzer** is the first phase of a compiler that scans the source co
 
 ---
 
-## 💡 Pseudo Code
+## 💡 Utility Functions
 
-```bash
-# Utility Functions
+
 1. Define a function to check if a character is a punctuator.
 2. Define a function to check if a string is an operator.
 3. Define a function to check if a string is a keyword.
 4. Define a function to validate if a string is a number.
 5. Define a function to validate if a string is a valid identifier.
+---
 
-# Token Analysis Logic
+
+## 💡 Token Analysis
 1. Initialize `left` and `right` pointers for string traversal.
 2. Loop through the input string:
    a. If the character is not a punctuator, move the `right` pointer.
@@ -71,7 +72,34 @@ A **Lexical Analyzer** is the first phase of a compiler that scans the source co
 
 ## 📂 File Structure
 
-```bash
+
+
+1. Define a function to check if a character is a punctuator.
+2. Define a function to check if a string is an operator.
+3. Define a function to check if a string is a keyword.
+4. Define a function to validate if a string is a number.
+5. Define a function to validate if a string is a valid identifier.
+---
+
+
+## 💡 Utility Functions
+1. Initialize `left` and `right` pointers for string traversal.
+2. Loop through the input string:
+   a. If the character is not a punctuator, move the `right` pointer.
+   b. When a punctuator is found:
+      i. Extract the substring between `left` and `right`.
+      ii. Classify the substring as a keyword, identifier, number, or operator.
+      iii. Append the result to the token list.
+   c. Move the `left` pointer to match the `right` pointer and continue.
+3. Repeat until the string is fully analyzed.
+
+# File Upload Handling
+1. Use a file reader to read the uploaded file as text.
+2. Populate the input text area with the file content.
+
+
+## 📂 File Structure
+
 .
 ├── 📄 index.html          # Main HTML file containing the UI structure
 ├── 🎨 style.css           # Custom styling with Bootstrap enhancements
@@ -81,6 +109,7 @@ A **Lexical Analyzer** is the first phase of a compiler that scans the source co
 ## Output
 
 ```bash
+
 int --> <Token , KW>  
 main --> <Token , id>  
 () --> <Token , Op>  
@@ -94,7 +123,7 @@ cout --> <Token , id>
 << --> <Token , Op>  
 "Hello, World!" --> <Token , id>  
 } --> <Token , Op>  
-
+```
 
 ### 🧑‍💻 Developed By
 Nazmus Sakib Apurba
