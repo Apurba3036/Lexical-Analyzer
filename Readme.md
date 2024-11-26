@@ -4,7 +4,7 @@ A **Lexical Analyzer** is the first phase of a compiler that scans the source co
 
 ---
 
-## Project Live [Link](https://lexical-analyzer-assignment.netlify.app/)
+## Website Live : [https://lexical-analyzer-assignment.netlify.app/](https://lexical-analyzer-assignment.netlify.app/)
 
 ## 🚀 Project Features
 
